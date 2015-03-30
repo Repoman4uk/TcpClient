@@ -13,7 +13,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+//Тест гита
 void MainWindow::on_pushButton_clicked()
 {
     client=new QTcpSocket(this);
