@@ -25,27 +25,29 @@ void MainWindow::on_pushButton_clicked()
     QDataStream out(&data,QIODevice::WriteOnly);
     if (ui->radioUTF->isChecked())
     {
-        out<<ui->lineIP->text().toUtf8();
-        client->write(data);
-        data.clear();
+        out<<ui->lineNumber->text().toUtf8();
+        //client->write(data);
+        //data.clear();
         out<<ui->linecontrol->text().toUtf8();
 
     }
     if (ui->radioInt->isChecked())
     {
-        out<<ui->lineIP->text().toInt();
+        out<<ui->lineNumber->text().toInt();
         client->write(data);
         data.clear();
         out<<ui->linecontrol->text().toInt();
     }
     if (ui->radioUni->isChecked())
     {
-        out<<ui->lineIP->text();
+        out<<ui->lineNumber->text();
         client->write(data);
         data.clear();
         out<<ui->linecontrol->text();
     }
     client->write(data);
+    //client->flush();
+    client->disconnectFromHost();
 }
 void MainWindow::slotConnected()
 {
