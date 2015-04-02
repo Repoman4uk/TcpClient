@@ -25,7 +25,7 @@ void MainWindow::on_pushButton_clicked()
     QDataStream out(&data,QIODevice::WriteOnly);
     if (ui->radioUTF->isChecked())
     {
-        out<<ui->lineNumber->text().toInt();
+        out<<ui->lineNumber->text().toUtf8()<<'\n';
         //client->write(data);
         //data.clear();
         QString str=ui->linecontrol->text().toUtf8();

@@ -156,6 +156,9 @@
     </property>
    </widget>
    <widget class="QRadioButton" name="radioUni">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>370</x>
